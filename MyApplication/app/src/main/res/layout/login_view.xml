@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/emailText"
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/email"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/emailBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:background="@drawable/border"
+            android:layout_below="@+id/emailText"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:hint="Email" />
+
+        <TextView
+            android:id="@+id/pwdText"
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/password"
+            android:layout_below="@+id/emailBox"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/pwdBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:background="@drawable/border"
+            android:layout_below="@+id/pwdText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+            android:id="@+id/repPwdText"
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/confirmPwd"
+            android:layout_below="@+id/strengthMeter"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/repPwdBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:background="@drawable/border"
+            android:layout_below="@+id/repPwdText"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:hint="Confirm password" />
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:text="@string/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/repPwdBox"
+            android:layout_marginTop="10dp" />
+
+</LinearLayout>
