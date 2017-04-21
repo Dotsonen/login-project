@@ -38,37 +38,12 @@ public class LoginView extends LinearLayout {
         final EditText repPwd = (EditText) findViewById(R.id.repPwdBox);
         final EditText email = (EditText) findViewById(R.id.emailBox);
 
-        ProgressBar strengthMeter = (ProgressBar) findViewById(R.id.progressBar);
-
         final Button signUpButton = (Button) findViewById(R.id.signUpButton);
-
-        pwd.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                // Checks if password is entered
-                if (pwd.getText().toString().length() == 0) {
-                    pwd.setError("Enter your password..!");
-                }
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+        
 
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                signUpButton.setBackgroundColor(Color.RED);
                 // Check if all fields are filled
                 if (pwd.getText().toString().equals("") || repPwd.getText().toString().equals("") || email.getText().toString().equals("")) {
 
@@ -76,6 +51,7 @@ public class LoginView extends LinearLayout {
                     String text = "You have to fill in all fields!";
                     Toast toast = Toast.makeText(getContext(), text, duration);
                     toast.show();
+                    signUpButton.setBackgroundColor(Color.RED);
 
                 } else {
 
@@ -85,6 +61,7 @@ public class LoginView extends LinearLayout {
                         String text = "Passwords do not agree!" + " pwd = " + pwd.getText().toString() + " repPwd = " + repPwd.getText().toString();
                         Toast toast = Toast.makeText(getContext(), text, duration);
                         toast.show();
+                        signUpButton.setBackgroundColor(Color.RED);
 
                     } else {
 
@@ -92,6 +69,7 @@ public class LoginView extends LinearLayout {
                         String text = "Congratulations! You signed up successfully." + " pwd = " + pwd.getText().toString() + " repPwd = " + repPwd.getText().toString();
                         Toast toast = Toast.makeText(getContext(), text, duration);
                         toast.show();
+                        signUpButton.setBackgroundColor(Color.GREEN);
 
                     }
 
@@ -105,7 +83,6 @@ public class LoginView extends LinearLayout {
 
     private void init(Context context) {
         View.inflate(context, R.layout.login_view, this);
-     //   ((Activity)context).getLayoutInflater().inflate(R.layout.login_view,this);
 
     }
 
